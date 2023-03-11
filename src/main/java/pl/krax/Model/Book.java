@@ -1,14 +1,14 @@
 package pl.krax.Model;
 
 import lombok.*;
-import org.springframework.stereotype.Component;
 
 @AllArgsConstructor
 @Getter
 @Setter
 @RequiredArgsConstructor
+@NoArgsConstructor
 public class Book {
-    private long id;
+    private Long id;
     @NonNull
     private String isbn;
     @NonNull
@@ -18,6 +18,6 @@ public class Book {
     @NonNull
     private String publisher;
     @NonNull
-    private String bookTopic;
+    private String type;
 
 }

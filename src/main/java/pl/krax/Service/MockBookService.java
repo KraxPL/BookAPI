@@ -41,20 +41,20 @@ public class MockBookService {
         return null;
     }
 
-    public void editBook(long id, String isbn, String title, String author, String publisher, String bookTopic) {
-        Book book = list.get((int) id);
-        if (book != null) {
-            book.setIsbn(isbn);
-            book.setTitle(title);
-            book.setAuthor(author);
-            book.setPublisher(publisher);
-            book.setBookTopic(bookTopic);
+    public void editBook(Book book) {
+        Book b = list.get(Math.toIntExact(book.getId()));
+        if (b != null) {
+            b.setIsbn(book.getIsbn());
+            b.setTitle(book.getTitle());
+            b.setAuthor(book.getAuthor());
+            b.setPublisher(book.getPublisher());
+            b.setType(book.getType());
         }
         System.out.println("Book successfully edited!");
     }
 
-    public void deleteBook(Book book) {
-        list.remove(book);
+    public void deleteBook(Long id) {
+        list.remove(this.getBookById(id));
         System.out.println("Book successfully deleted!");
     }
 }

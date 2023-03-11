@@ -6,8 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import pl.krax.Model.Book;
 import pl.krax.Service.MockBookService;
 
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -26,13 +24,20 @@ private MockBookService mockBookService;
         return mockBookService.getBooks();
     }
     @PostMapping("/")
-    public void addBook(@RequestParam String isbn, @RequestParam String title, @RequestParam String author,
-                          @RequestParam String publisher, @RequestParam String bookTopic, HttpServletResponse response) throws IOException {
-        mockBookService.addBookToList(new Book(isbn, title, author, publisher, bookTopic));
-        response.sendRedirect("/books/");
+    public void addBook(@RequestBody Book book) {
+        mockBookService.addBookToList(book);
     }
     @RequestMapping(value="/{id}", method= RequestMethod.GET)
-    public Book getBookById(@PathVariable long id){
+    public Book getBookById(@PathVariable Long id){
         return mockBookService.getBookById(id);
+    }
+    @RequestMapping(value = "/", method = RequestMethod.PUT)
+    @ResponseBody
+    public void editBook(@RequestBody Book book){
+        mockBookService.editBook(book);
+    }
+    @DeleteMapping("/{id}")
+    public void removeBook(@PathVariable Long id) {
+        mockBookService.deleteBook(id);
     }
 }
