@@ -15,4 +15,5 @@ public class AppInitializer extends
     @Override
     protected String[] getServletMappings() {
         return new String[]{"/"};   }
+
 }
