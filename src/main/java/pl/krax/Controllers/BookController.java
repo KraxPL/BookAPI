@@ -31,4 +31,8 @@ private MockBookService mockBookService;
         mockBookService.addBookToList(new Book(isbn, title, author, publisher, bookTopic));
         response.sendRedirect("/books/");
     }
+    @RequestMapping(value="/{id}", method= RequestMethod.GET)
+    public Book getBookById(@PathVariable long id){
+        return mockBookService.getBookById(id);
+    }
 }
