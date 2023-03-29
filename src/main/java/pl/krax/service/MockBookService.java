@@ -33,7 +33,7 @@ public class MockBookService implements BookServiceInterface {
                 .build());
 
         addBook(Book.builder()
-                .author("Cay	Horstmann,	Gary	Cornell")
+                .author("Cay Horstmann, Gary Cornell")
                 .isbn("9780130819338")
                 .title("Java 2 Podstawy")
                 .publisher("Helion")
