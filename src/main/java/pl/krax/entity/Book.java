@@ -1,14 +1,20 @@
-package pl.krax.Model;
+package pl.krax.entity;
 
 import lombok.*;
+
+import javax.persistence.*;
 
 @AllArgsConstructor
 @Getter
 @Setter
 @RequiredArgsConstructor
-@NoArgsConstructor
+@NoArgsConstructor(force = true)
+@Entity
 @Builder
+@Table(name = "books")
 public class Book {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NonNull
     private String isbn;
@@ -22,3 +28,4 @@ public class Book {
     private String type;
 
 }
+

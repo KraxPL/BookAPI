@@ -1,6 +1,6 @@
-package pl.krax.Service;
+package pl.krax.service;
 
-import pl.krax.Model.Book;
+import pl.krax.entity.Book;
 
 import java.util.List;
 

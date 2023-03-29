@@ -1,7 +1,7 @@
-package pl.krax.Initializer;
+package pl.krax.initializer;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
-import pl.krax.Configuration.AppConfig;
+import pl.krax.configuration.AppConfig;
 
 public class AppInitializer extends
         AbstractAnnotationConfigDispatcherServletInitializer {
