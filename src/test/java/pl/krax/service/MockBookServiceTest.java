@@ -53,7 +53,7 @@ class MockBookServiceTest {
         bookService.addBook(book);
 
         //then
-        assertThat(bookService.getBooks().size()).isEqualTo(4);
+        assertThat(bookService.findAll().size()).isEqualTo(4);
     }
 
     @Test
@@ -63,7 +63,7 @@ class MockBookServiceTest {
         bookService.addBook(null);
 
         //then
-        assertThat(bookService.getBooks().size()).isEqualTo(3);
+        assertThat(bookService.findAll().size()).isEqualTo(3);
     }
 
     @Test
@@ -74,7 +74,7 @@ class MockBookServiceTest {
         bookService.deleteBook(bookId);
 
         //then
-        assertThat(bookService.getBooks().size()).isEqualTo(2);
+        assertThat(bookService.findAll().size()).isEqualTo(2);
         assertThat(bookService.getBookById(bookId)).isNull();
     }
 

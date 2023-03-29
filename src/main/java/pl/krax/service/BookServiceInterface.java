@@ -5,7 +5,7 @@ import pl.krax.entity.Book;
 import java.util.List;
 
 public interface BookServiceInterface {
-    List<Book> getBooks();
+    List<Book> findAll();
     void addBook(Book book);
     Book getBookById(Long id);
     void editBook(Long bookId, Book book);

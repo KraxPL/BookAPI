@@ -1,14 +1,12 @@
 package pl.krax.controllers;
 
 import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import pl.krax.entity.Book;
 import pl.krax.service.MockBookService;
 
 import java.util.List;
 
-@Controller
 @RestController
 @RequestMapping("/books")
 @AllArgsConstructor
@@ -22,7 +20,7 @@ private MockBookService mockBookService;
     }
     @GetMapping("")
     public List<Book> getAllBooks(){
-        return mockBookService.getBooks();
+        return mockBookService.findAll();
     }
     @PostMapping("")
     public void addBook(@RequestBody Book book) {

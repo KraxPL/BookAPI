@@ -58,7 +58,7 @@ public class MockBookService implements BookServiceInterface {
         System.out.println("Book added successfully!");
     }
 
-    public List<Book> getBooks() {
+    public List<Book> findAll() {
         return list;
     }
 

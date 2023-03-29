@@ -2,18 +2,23 @@ package pl.krax.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Service;
 import pl.krax.entity.Book;
 import pl.krax.repository.BookRepository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
-@Primary
+@Service
+@Transactional
 @RequiredArgsConstructor
+@Primary
 public class JpaBookService implements BookServiceInterface {
+
     private final BookRepository repository;
 
     @Override
-    public List<Book> getBooks() {
+    public List<Book> findAll() {
         return repository.findAll();
     }
 
