@@ -7,6 +7,7 @@ import lombok.*;
 @Setter
 @RequiredArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Book {
     private Long id;
     @NonNull

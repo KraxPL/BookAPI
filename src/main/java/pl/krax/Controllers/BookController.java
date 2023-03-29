@@ -25,7 +25,7 @@ private MockBookService mockBookService;
     }
     @PostMapping("/")
     public void addBook(@RequestBody Book book) {
-        mockBookService.addBookToList(book);
+        mockBookService.editBook(book.getId(), book);
     }
     @RequestMapping(value="/{id}", method= RequestMethod.GET)
     public Book getBookById(@PathVariable Long id){
@@ -34,7 +34,7 @@ private MockBookService mockBookService;
     @RequestMapping(value = "/", method = RequestMethod.PUT)
     @ResponseBody
     public void editBook(@RequestBody Book book){
-        mockBookService.editBook(book);
+        mockBookService.editBook(book.getId(), book);
     }
     @DeleteMapping("/{id}")
     public void removeBook(@PathVariable Long id) {
